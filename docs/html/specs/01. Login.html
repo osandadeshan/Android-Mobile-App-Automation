@@ -4,18 +4,37 @@ Version         : 1.0.0
 Owner           : Osanda Deshan
 Description     : This is an executable specification file which follows markdown syntax. Every heading in this file denotes a scenario. Every bulleted point denotes a step.</p>
 <p>tags: login</p>
-<h2>Targeted platform information</h2>
+<h2>Mobile device configurations</h2>
 <ul>
-<li>Testing platform information</li>
+<li>Get device configurations</li>
 </ul>
-<h2>Verify that the Login page contains all the expected elements</h2>
+<h2>Verify that the Login page contains the Create Account button</h2>
 <ul>
-<li>Verify that the Create Account button is visible</li>
+<li>Create Account button should be visible</li>
 </ul>
 <h2>Verify that an invalid user cannot login to the application</h2>
 <ul>
-<li>Verify that a valid user can login to the application using the valid username as &quot;osa&quot; and the password as &quot;osa&quot;</li>
-<li>Verify that the login is fail</li>
+<li>Login page title is &quot;Login&quot;</li>
+<li>Set the username and the password
+<table>
+<thead>
+<tr>
+<th>Username</th>
+<th>Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Osanda</td>
+<td>Password</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>Tap on Sign in button</li>
+<li>Login error alert title is &quot;Authentication Failed&quot;</li>
+<li>Login error alert message is &quot;invalid username or password&quot;</li>
+<li>Tap on Ok button in the login error alert</li>
 </ul>
 <h2>Clear username and password textbox contents</h2>
 <ul>
@@ -23,11 +42,29 @@ Description     : This is an executable specification file which follows markdow
 </ul>
 <h2>Verify that a valid user can login to the application</h2>
 <ul>
-<li>Verify that a valid user can login to the application using the valid username as &quot;sandun&quot; and the password as &quot;Password1&quot;</li>
-<li>Verify that the login is success</li>
+<li>Set the username and the password
+<table>
+<thead>
+<tr>
+<th>Username</th>
+<th>Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>osandadeshan</td>
+<td>Password1</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>Tap on Sign in button</li>
+<li>Tap on Skip button</li>
+<li>Tap on Got It button</li>
+<li>User lands to the &quot;Expert Decks&quot; page</li>
 </ul>
 <h2>Verify that a user lands to the Expert Decks page after the login</h2>
 <ul>
-<li>Verify that the user lands to the &quot;Expert Decks&quot; page</li>
+<li>User lands to the &quot;Expert Decks&quot; page</li>
 </ul>
 <ul id="navigation"><center><li class="nav"><a href="..\index.html">=</a></li><li class="nav"><a href=".\02. Navigation Bar.html">></a></li></center>

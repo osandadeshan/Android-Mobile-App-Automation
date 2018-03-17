@@ -5,6 +5,11 @@ import org.testng.Assert;
 import java.io.*;
 
 
+/**
+ * Created by Osanda on 5/14/2017.
+ */
+
+
 public class CompareTextFiles {
 
     public static void compare(String filePath1, String filePath2) throws IOException

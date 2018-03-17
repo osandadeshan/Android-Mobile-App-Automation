@@ -26,6 +26,7 @@ import static com.maxsoft.mobileautomation.android.util.DriverSetup.androidDrive
 
 public class Base {
 
+    public static String CURRENT_DIRECTORY = System.getProperty("user.dir");
     public final String WEBVIEW = System.getenv("webview");
     public final String NATIVE_APP = System.getenv("native_app");
     private WebElement element;

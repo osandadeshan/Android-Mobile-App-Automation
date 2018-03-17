@@ -1,0 +1,17 @@
+Created by Osanda Deshan on 9/23/2017
+
+This is a concept file with following syntax for each concept.
+
+
+
+# New user login to the application using the username as <username> and the password as <password>
+
+* Login page title is "Login"
+* Set the username and the password
+     |Username       |Password       |
+     |---------------|---------------|
+     |<username>     |<password>     |
+* Tap on Sign in button
+* Tap on Skip button
+* Tap on Got It button
+* User lands to the "Expert Decks" page

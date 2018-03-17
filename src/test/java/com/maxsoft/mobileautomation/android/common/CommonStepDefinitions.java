@@ -1,17 +1,17 @@
 package com.maxsoft.mobileautomation.android.common;
 
+import com.maxsoft.mobileautomation.android.pages.CommonElementsPage;
 import com.thoughtworks.gauge.Gauge;
 import com.thoughtworks.gauge.Step;
 import com.thoughtworks.gauge.Table;
 import com.thoughtworks.gauge.TableRow;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import com.maxsoft.mobileautomation.android.common.Base;
 import com.maxsoft.mobileautomation.android.util.DriverSetup;
 import com.maxsoft.mobileautomation.android.util.ToastMessage;
 import java.io.IOException;
 import java.util.List;
+import static com.maxsoft.mobileautomation.android.util.DriverSetup.androidDriver;
 
 
 /**
@@ -21,12 +21,10 @@ import java.util.List;
 
 public class CommonStepDefinitions {
 
-    @FindBy(id = "com.pearsoned.smartflashcards:id/toolbar")
-    public WebElement TOOL_BAR;
-
     private Base baseObj = new Base();
+    private CommonElementsPage commonElementsPage = PageFactory.initElements(androidDriver, CommonElementsPage.class);
 
-    @Step("Testing platform information")
+    @Step("Get device configurations")
     public void platformInfo(){
         Gauge.writeMessage("Targeted Platform: Android");
         Gauge.writeMessage("Targeted Android Version: v" + DriverSetup.ANDROID_VERSION);
@@ -41,8 +39,8 @@ public class CommonStepDefinitions {
         DriverSetup.setupDriver();
     }
 
-    @Step("Verify that the toast message is <toastMessage>")
-    public void verifyToastMessage(String toastMessage) throws Exception {
+    @Step("Toast message is <toastMessage>")
+    public void isToastEquals(String toastMessage) throws Exception {
         //Assert.assertTrue(ToastMessage.getToastMessage().contains(toastMessage), "Invalid Toast Message");
         Assert.assertEquals(ToastMessage.getToastMessageContent(), toastMessage, "Invalid toast message!");
     }
@@ -52,9 +50,9 @@ public class CommonStepDefinitions {
        Thread.sleep(seconds*1000);
     }
 
-    @Step("Verify that the page title is <pageTitle>")
-    public void verifyPageTitle(String pageTitle) throws IOException {
-        baseObj.isElementAccessibilityIdTextEquals(TOOL_BAR, pageTitle);
+    @Step("Page title is <pageTitle>")
+    public void isPageTitleEquals(String pageTitle) throws IOException {
+        commonElementsPage.isPageTitleEquals(pageTitle);
     }
 
     @Step("Swipe the device screen horizontally right to left")
@@ -92,12 +90,12 @@ public class CommonStepDefinitions {
         baseObj.navigateBackFromDevice();
     }
 
-    @Step("Verify the webview contains <text>")
+    @Step("WebView contains <text>")
     public void isWebViewTextEquals(String text) throws InterruptedException {
         baseObj.isWebViewTextEquals(text);
     }
 
-    @Step("Verify the webview contains the following text <table>")
+    @Step("Webview contains <table>")
     public void isWebViewTextEquals(Table table) throws InterruptedException {
         List<TableRow> rows = table.getTableRows();
         List<String> columnNames = table.getColumnNames();

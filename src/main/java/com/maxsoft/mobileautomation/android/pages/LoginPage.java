@@ -39,10 +39,6 @@ public class LoginPage extends Base {
     public WebElement BTN_GOT_IT;
 
     private static final String CREATE_ACCOUNT_BUTTON_LABEL = "Create Account";
-    private static final String LOGIN_ERROR_TITLE = "Authentication Failed";
-    private static final String LOGIN_ERROR_MESSAGE = "invalid username or password";
-    private static final String LOGIN_PAGE_TITLE = "Login";
-    private static final String EXPERT_DECKS_HOME_PAGE_TITLE = "Expert Decks";
 
     public LoginPage() {
         PageFactory.initElements(androidDriver, this);
@@ -55,16 +51,15 @@ public class LoginPage extends Base {
     public void login(String username, String password) throws IOException {
         setTextAs(TXT_USERNAME, username);
         setTextAs(TXT_PASSWORD, password);
+    }
+
+    public void tapSignInButton() throws IOException {
         tap(BTN_SIGN_IN);
     }
 
     public void clearTextFields() throws IOException {
         clearText(TXT_USERNAME);
         clearText(TXT_PASSWORD);
-    }
-
-    public void isLoginSuccess() throws IOException {
-        isPageTitleEquals(TOOL_BAR, EXPERT_DECKS_HOME_PAGE_TITLE);
     }
 
     public void skipWelcomeFlow() throws IOException {
@@ -79,11 +74,16 @@ public class LoginPage extends Base {
         isPageTitleEquals(TOOL_BAR, pageTitle);
     }
 
-    public void isLoginFail() throws IOException {
-        isElementNameEquals(ALERT_TITLE, LOGIN_ERROR_TITLE);
-        isElementNameEquals(ALERT_MESSAGE, LOGIN_ERROR_MESSAGE);
+    public void isLoginErrorAlertTitleEquals(String loginErrorAlertTitle) throws IOException {
+        isElementNameEquals(ALERT_TITLE, loginErrorAlertTitle);
+    }
+
+    public void isLoginErrorAlertMessageEquals(String loginErrorAlertMessage) throws IOException {
+        isElementNameEquals(ALERT_MESSAGE, loginErrorAlertMessage);
+    }
+
+    public void tapLoginErrorAlertOkButton() throws IOException {
         tap(BTN_ALERT_OK);
-        isPageTitleEquals(LBL_LOGIN_PAGE_TITLE, LOGIN_PAGE_TITLE);
     }
 
     public void navigateToCreateAccount() throws IOException {
