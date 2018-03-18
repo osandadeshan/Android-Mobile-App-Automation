@@ -16,11 +16,11 @@ import java.io.IOException;
 public class WelcomeFlowPage extends Base {
 
     @FindBy(id = "com.pearsoned.smartflashcards:id/button_skip")
-    public WebElement BTN_SKIP;
+    private WebElement BTN_SKIP;
     @FindBy(id = "com.pearsoned.smartflashcards:id/button_next")
-    public WebElement BTN_NEXT;
+    private WebElement BTN_NEXT;
     @FindBy(id = "com.pearsoned.smartflashcards:id/textView_gotIt")
-    public WebElement BTN_GOT_IT;
+    private WebElement BTN_GOT_IT;
 
     public WelcomeFlowPage() {
         PageFactory.initElements(DriverSetup.androidDriver, this);

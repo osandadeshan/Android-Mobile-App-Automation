@@ -16,13 +16,13 @@ import java.io.IOException;
 public class NavigationBar extends Base {
 
     @FindBy(id = "com.pearsoned.smartflashcards:id/navigationExpertDecks")
-    public WebElement BTN_EXPERTDECK;
+    private WebElement BTN_EXPERTDECK;
     @FindBy(id = "com.pearsoned.smartflashcards:id/navigationMyDecks")
-    public WebElement BTN_MYDECK;
+    private WebElement BTN_MYDECK;
     @FindBy(id = "com.pearsoned.smartflashcards:id/navigationArchived")
-    public WebElement BTN_ARCHIVED;
+    private WebElement BTN_ARCHIVED;
     @FindBy(id = "com.pearsoned.smartflashcards:id/navigationSettings")
-    public WebElement BTN_SETTINGS;
+    private WebElement BTN_SETTINGS;
 
     public NavigationBar() {
         PageFactory.initElements(DriverSetup.androidDriver, this);

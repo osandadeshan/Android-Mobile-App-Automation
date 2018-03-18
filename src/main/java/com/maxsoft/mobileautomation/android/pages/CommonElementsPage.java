@@ -16,7 +16,7 @@ import static com.maxsoft.mobileautomation.android.util.DriverSetup.androidDrive
 public class CommonElementsPage extends Base {
 
     @FindBy(id = "com.pearsoned.smartflashcards:id/toolbar")
-    public WebElement TOOL_BAR;
+    private WebElement TOOL_BAR;
 
     public CommonElementsPage() {
         PageFactory.initElements(androidDriver, this);

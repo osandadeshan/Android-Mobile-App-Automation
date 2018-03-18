@@ -16,27 +16,27 @@ import static com.maxsoft.mobileautomation.android.util.DriverSetup.androidDrive
 public class LoginPage extends Base {
 
     @FindBy(xpath = "//android.widget.TextView[@text='Login']")
-    public WebElement LBL_LOGIN_PAGE_TITLE;
+    private WebElement LBL_LOGIN_PAGE_TITLE;
     @FindBy(id = "com.pearsoned.smartflashcards:id/editTextUserName")
-    public WebElement TXT_USERNAME;
+    private WebElement TXT_USERNAME;
     @FindBy(id = "com.pearsoned.smartflashcards:id/editTextPassword")
-    public WebElement TXT_PASSWORD;
+    private WebElement TXT_PASSWORD;
     @FindBy(id = "com.pearsoned.smartflashcards:id/buttonSignIn")
-    public WebElement BTN_SIGN_IN;
+    private WebElement BTN_SIGN_IN;
     @FindBy(id = "android:id/alertTitle")
-    public WebElement ALERT_TITLE;
+    private WebElement ALERT_TITLE;
     @FindBy(id = "android:id/message")
-    public WebElement ALERT_MESSAGE;
+    private WebElement ALERT_MESSAGE;
     @FindBy(id = "android:id/button1")
-    public WebElement BTN_ALERT_OK;
+    private WebElement BTN_ALERT_OK;
     @FindBy(id = "com.pearsoned.smartflashcards:id/buttonCreateAccount")
-    public WebElement BTN_CREATE_ACCOUNT;
+    private WebElement BTN_CREATE_ACCOUNT;
     @FindBy(id = "com.pearsoned.smartflashcards:id/toolbar")
-    public WebElement TOOL_BAR;
+    private WebElement TOOL_BAR;
     @FindBy(id = "com.pearsoned.smartflashcards:id/button_skip")
-    public WebElement BTN_WELCOME_SKIP;
+    private WebElement BTN_WELCOME_SKIP;
     @FindBy(id = "com.pearsoned.smartflashcards:id/textView_gotIt")
-    public WebElement BTN_GOT_IT;
+    private WebElement BTN_GOT_IT;
 
     private static final String CREATE_ACCOUNT_BUTTON_LABEL = "Create Account";
 
